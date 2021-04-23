@@ -1,5 +1,5 @@
 # ansible1
-Setup Tomcat on hosts. With options:
+Setup Tomcat. With options:
 1. Installed from sources (tar.gz) from web
 2. Owned and run by user tomcat:tomcat
 3. Version $tomcat_version
