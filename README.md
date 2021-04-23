@@ -4,3 +4,8 @@ Setup Tomcat on hosts. With options:
 2. Owned and run by user tomcat:tomcat
 3. Version $tomcat_version
 4. Installation folder is /opt/tomcat/apache-tomcat-$tomcat_version
+
+and checks:
+1. Process id
+2. Http request
+3. Uptime
