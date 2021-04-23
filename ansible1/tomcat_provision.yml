@@ -41,5 +41,17 @@
       dest: /etc/systemd/system/tomcat.service
       
 
-  - name: Ensure tomcat service running and enabled
-    service: name=tomcat state=started enabled=yes
+- name: Ensure tomcat running and enabled by shell
+  hosts: all
+
+  tasks:
+  - name: Check tomcat proccess
+    shell: ps aux | pgrep -f [t]omcat
+
+  - name: Check http request
+    shell: curl -f -LI 10.0.2.4:8080 2>/dev/null | head -n 1
+    args:
+      warn: false
+
+  - name: Check uptime
+    shell: ps aux | pgrep -f tomcat | xargs ps -o etime -p
