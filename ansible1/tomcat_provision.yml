@@ -1,0 +1,45 @@
+- name: Deploy Tomcat
+  hosts: all
+
+  vars:
+    java_version: 1.8.0
+    tomcat_home: /opt/tomcat
+    tomcat_version: 9.0.45
+
+  tasks:
+  - name: Ensure java installed
+    yum: name=java-{{java_version}}-openjdk
+
+  - name: Create tomcat group
+    group:
+      name: tomcat
+      gid: 950
+      state: present
+
+  - name: Create tomcat user
+    user:
+      name: tomcat
+      uid: 950
+      group: tomcat
+
+  - name: Create tomcat home directory
+    file:
+      path: "{{tomcat_home}}"
+      state: directory
+
+  - name: Unarchive tomcat from remote source
+    unarchive:
+      src: "https://apache-mirror.rbc.ru/pub/apache/tomcat/tomcat-9/v{{tomcat_version}}/bin/apache-tomcat-{{tomcat_version}}.tar.gz"
+      dest: "{{tomcat_home}}"
+      owner: tomcat
+      group: tomcat
+      remote_src: yes
+
+  - name: Setup INIT
+    template:
+      src: tomcat.service.j2
+      dest: /etc/systemd/system/tomcat.service
+      
+
+  - name: Ensure tomcat service running and enabled
+    service: name=tomcat state=started enabled=yes
