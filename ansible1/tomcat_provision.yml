@@ -41,8 +41,10 @@
       dest: /etc/systemd/system/tomcat.service
 
   - name: Ensure tomcat running and enabled
-    service: name=tomcat state=started enabled=yes
-
+    service:
+      name: tomcat
+      state: started
+      enabled: yes
 
 - name: Ensure tomcat running and enabled by shell
   hosts: all
