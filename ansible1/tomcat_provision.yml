@@ -53,10 +53,10 @@
   - name: Check tomcat process
     shell: ps aux | pgrep -f [t]omcat
 
+  - name: Check uptime
+    shell: ps aux | pgrep -f tomcat | xargs ps -o etime -p
+
   - name: Check http request
     shell: curl -f -LI 127.0.0.1:8080 2>/dev/null | head -n 1
     args:
       warn: false
-
-  - name: Check uptime
-    shell: ps aux | pgrep -f tomcat | xargs ps -o etime -p
