@@ -54,7 +54,7 @@
     shell: ps aux | pgrep -f [t]omcat
 
   - name: Check http request
-    shell: curl -f -LI 10.0.2.4:8080 2>/dev/null | head -n 1
+    shell: curl -f -LI 127.0.0.1:8080 2>/dev/null | head -n 1
     args:
       warn: false
 
