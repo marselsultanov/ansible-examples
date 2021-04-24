@@ -1,0 +1,6 @@
+- name: Java version
+  shell: java -version 2>&1 | head -n 1 | awk '{print $3}' | sed 's/[^0-9._]//g'
+  register: sh_java_version_output
+
+- debug:
+    msg: "Java version is {{sh_java_version_output.stdout}}"

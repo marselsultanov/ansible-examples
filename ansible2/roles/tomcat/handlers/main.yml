@@ -1,0 +1,5 @@
+- name: Tomcat restart
+  service:
+    name: tomcat
+    state: restarted
+    daemon_reload: yes

@@ -1,0 +1,16 @@
+- name: Setup nginx
+  yum:
+    name: nginx
+
+- name: Setup reverse proxy for tomcat
+  template:
+    src: tomcat.conf.j2
+    dest: /etc/nginx/conf.d/tomcat.conf
+  notify:
+    - Nginx restart
+
+- name: Ensure nginx running and enabled
+  service:
+    name: nginx
+    state: started
+    enabled: yes

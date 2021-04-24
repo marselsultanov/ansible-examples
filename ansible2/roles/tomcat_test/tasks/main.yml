@@ -1,0 +1,19 @@
+- name: Check tomcat process
+  shell: ps aux | pgrep -f [t]omcat
+  register: sh_tomcat_process_output
+
+- name: Check http request
+  shell: curl -f -LI 127.0.0.1:8080 2>/dev/null | head -n 1
+  args:
+    warn: false
+  register: sh_curl_output
+
+- name: Check tomcat uptime
+  shell: ps aux | pgrep -f tomcat | xargs ps -o etime -p | sed -n '2p'
+  register: sh_tomcat_uptime_output
+
+- debug:
+    msg:
+    - "Tomcat process pid is {{sh_tomcat_process_output.stdout}}"
+    - "Curl request answer is {{sh_curl_output.stdout}}"
+    - "Tomcat uptime is {{sh_tomcat_uptime_output.stdout}}"

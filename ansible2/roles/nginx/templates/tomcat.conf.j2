@@ -1,0 +1,7 @@
+server {
+  listen 80;
+  server_name {{ansible_fqdn}};
+  location / {
+    proxy_pass http://{{ansible_fqdn}}:8080;
+  }
+}
