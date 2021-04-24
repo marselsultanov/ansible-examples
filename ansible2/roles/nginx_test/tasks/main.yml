@@ -1,7 +1,3 @@
-- name: Check nginx version
-  shell: nginx -v 2>&1 | awk -F/ '{print $2}'
-  register: sh_nginx_version_output
-
 - name: Check nginx process
   shell: ps aux | pgrep -f [n]ginx | head -n 1
   register: sh_nginx_process_output
@@ -10,8 +6,12 @@
   shell: ps aux | pgrep -f [n]ginx | head -n 1| xargs ps -o etime -p | sed -n '2p'
   register: sh_nginx_uptime_output
 
+- name: Check nginx version
+  shell: nginx -v 2>&1 | awk -F/ '{print $2}'
+  register: sh_nginx_version_output
+
 - debug:
     msg:
-      - "Nginx version is {{sh_nginx_version_output.stdout}}"
       - "Nginx process pid is {{sh_nginx_process_output.stdout}}"
       - "Nginx uptime is {{sh_nginx_uptime_output.stdout}}"
+      - "Nginx version is {{sh_nginx_version_output.stdout}}"
