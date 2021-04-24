@@ -1,2 +1,0 @@
-- name: Ensure java installed
-  yum: name=java-{{java_version}}-openjdk
