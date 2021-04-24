@@ -50,7 +50,7 @@
   hosts: all
 
   tasks:
-  - name: Check tomcat proccess
+  - name: Check tomcat process
     shell: ps aux | pgrep -f [t]omcat
 
   - name: Check http request
