@@ -16,6 +16,7 @@ Setup Tomcat with options:
 2. Owned and run by user tomcat:tomcat
 3. Version $tomcat_version
 4. Installation folder is /opt/tomcat/apache-tomcat-$tomcat_version
+
 and checks:
 1. Process id
 2. Http request
@@ -23,6 +24,7 @@ and checks:
 
 Setup Nginx with option:
 1. Tomcat home page available on port 80 via Nginx
+
 and checks:
 1. Process id
 2. Uptime
