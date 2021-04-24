@@ -19,8 +19,8 @@ Setup Tomcat with options:
 
 and checks:
 1. Process id
-2. Http request
-3. Uptime
+2. Uptime
+3. Http request
 
 Setup Nginx with option:
 1. Tomcat home page available on port 80 via Nginx
