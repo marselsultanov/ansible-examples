@@ -29,3 +29,9 @@ and checks:
 1. Process id
 2. Uptime
 3. Version
+
+# ansible3
+Сustom filter, which select URL to download MongoDB depends on OS family, OS major release number and MongoDB version.
+
+# Copyright
+Forked from https://github.com/sbeliakou/ansible-examples
