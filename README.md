@@ -34,4 +34,4 @@ and checks:
 Сustom filter, which select URL to download MongoDB depends on OS family, OS major release number and MongoDB version.
 
 # Copyright
-Forked from https://github.com/sbeliakou/ansible-examples
+Based on https://github.com/sbeliakou/ansible-examples
