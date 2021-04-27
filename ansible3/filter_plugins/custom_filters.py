@@ -1,3 +1,5 @@
+# Copyright (C) Siarhei Beliakou
+
 def get_mongo_src(arg, os_name, os_version, mongo_version):
     import re
 
