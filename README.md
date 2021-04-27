@@ -31,4 +31,6 @@ and checks:
 3. Version
 
 # ansible3
-Сustom filter, which select URL for download MongoDB. Depends on OS family, OS major release number and MongoDB version.
+Сustom filter, with options:
+1. Select URL for download MongoDB
+2. Depends on OS family, OS major release number and MongoDB version
