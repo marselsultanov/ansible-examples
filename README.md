@@ -32,6 +32,3 @@ and checks:
 
 # ansible3
 Сustom filter, which select URL for download MongoDB. Depends on OS family, OS major release number and MongoDB version.
-
-# Copyright
-Based on https://github.com/sbeliakou/ansible-examples
