@@ -6,6 +6,7 @@
       vagrant_box:
         path: ./Vagrantfile
         state: running
+    - meta: refresh_inventory
 
 - name: Provision VM
   hosts: all
