@@ -1,0 +1,11 @@
+- name: Setup nginx
+  yum:
+    name: nginx
+  become: yes
+
+- name: Ensure nginx running and enabled
+  service:
+    name: nginx
+    state: started
+    enabled: yes
+  become: yes

@@ -1,0 +1,14 @@
+- name: Start VM by Vagrant
+  hosts: localhost
+
+  tasks:
+    - name: Ensure VM is running
+      vagrant_box:
+        path: ./Vagrantfile
+        state: running
+
+- name: Provision VM
+  hosts: all
+
+  roles:
+    - nginx
