@@ -4,7 +4,7 @@ result=$(curl -v -T ${src} "http://${username}:${password}@${url}/manager/text/d
 cat << EOF
 {
   "changed": true,
-  "tomcat_result": "$result",
-  "link": "http://${url}/${path}"
+  "link": "http://${url}/${path}",
+  "tomcat_result": "$result"
 }
 EOF
