@@ -1,0 +1,19 @@
+  hosts: localhost
+  vars:
+    tomcat_urls:
+    - centos1.server
+    - centos2.server
+
+  tasks:
+  - name: Deploy WAR
+    deploy_war:
+      url: "{{item}}"
+      username: manager
+      password: manager
+      src: sample.war
+      path: sample
+    loop:
+      "{{tomcat_urls}}"
+    register: output
+    failed_when:
+      "'OK' not in output.tomcat_result"
