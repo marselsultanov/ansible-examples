@@ -32,6 +32,15 @@
   notify:
     - Tomcat restart
 
+- name: Setup remote access
+  template:
+    src: context.xml.j2
+    dest: "{{tomcat_home}}/apache-tomcat-{{tomcat_version}}/webapps/manager/META-INF/context.xml"
+    owner: tomcat
+    group: tomcat
+  notify:
+    - Tomcat restart
+
 - name: Setup init
   template:
     src: tomcat.service.j2
