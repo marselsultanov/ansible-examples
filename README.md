@@ -43,3 +43,7 @@ Creates new VM by Vagrant with option:
 
 Setup Nginx on VM with options:
 1. Using dynamic inventory
+
+# ansible5
+Deploy war file to Tomcat with option:
+1. Using custom module
