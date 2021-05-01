@@ -26,7 +26,7 @@
 - name: Setup users
   template:
     src: tomcat-users.xml.j2
-    dest: "{{tomcat_home}}/conf/tomcat-users.xml"
+    dest: "{{tomcat_home}}/apache-tomcat-{{tomcat_version}}/conf/tomcat-users.xml"
     owner: tomcat
     group: tomcat
   notify:
