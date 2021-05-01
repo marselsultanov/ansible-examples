@@ -23,7 +23,16 @@
     group: tomcat
     remote_src: yes
 
-- name: Setup Init
+- name: Setup users
+  template:
+    src: tomcat-users.xml.j2
+    dest: "{ tomcat_home}}/conf/tomcat-users.xml"
+    owner: tomcat
+    group: tomcat
+  notify:
+    - Tomcat restart
+
+- name: Setup init
   template:
     src: tomcat.service.j2
     dest: /etc/systemd/system/tomcat.service
