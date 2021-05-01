@@ -16,6 +16,8 @@ Setup Tomcat with options:
 2. Owned and run by user tomcat:tomcat
 3. Version $tomcat_version
 4. Installation folder is /opt/tomcat/apache-tomcat-$tomcat_version
+5. Created user manager for deploy
+6. Allowed remote deploy
 
 and checks:
 1. Process id
