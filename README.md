@@ -46,4 +46,4 @@ Setup Nginx on VM with options:
 
 # ansible5
 Deploy war file to Tomcat with option:
-1. Using custom module
+1. Using custom module on bash
